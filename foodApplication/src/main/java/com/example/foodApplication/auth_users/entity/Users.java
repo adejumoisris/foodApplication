@@ -1,6 +1,7 @@
 package com.example.foodApplication.auth_users.entity;
 
 import com.example.foodApplication.carts.entity.Cart;
+import com.example.foodApplication.order.entity.Order;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
