@@ -1,5 +1,6 @@
 package com.example.foodApplication.carts.dtos;
 
+import com.example.foodApplication.menu.dtos.MenuDTO;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
@@ -13,7 +14,7 @@ import java.util.List;
 public class CartItemDto {
 
     private Long id;
-    private MenuDto menu;
+    private MenuDTO menu;
     private int quantity;
     private BigDecimal totalAmount;
     private BigDecimal subTotal;

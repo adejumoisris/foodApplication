@@ -1,5 +1,6 @@
 package com.example.foodApplication.auth_users.dtos;
 
+import com.example.foodApplication.role.dtos.RoleDto;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;

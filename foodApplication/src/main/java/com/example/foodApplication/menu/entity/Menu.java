@@ -1,6 +1,8 @@
 package com.example.foodApplication.menu.entity;
 
 import com.example.foodApplication.category.entity.Category;
+import com.example.foodApplication.order.entity.OrderItems;
+import com.example.foodApplication.reviews.entity.Reviews;
 import com.stripe.model.Review;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -42,7 +44,7 @@ public class Menu {
     private Category  category;
 
     @OneToMany(mappedBy = "menu", cascade = CascadeType.ALL)
-    private List<OrderItem> orderItems;
+    private List<OrderItems> orderItems;
     @OneToMany(mappedBy = "menu", cascade = CascadeType.ALL,  orphanRemoval = true)
-    private List<Reviews> reviews;
+    private List<Reviews> review;
 }

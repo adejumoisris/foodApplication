@@ -3,6 +3,7 @@ package com.example.foodApplication.order.entity;
 import com.example.foodApplication.auth_users.entity.Users;
 import com.example.foodApplication.enums.OrderStatus;
 import com.example.foodApplication.enums.PaymentStatus;
+import com.example.foodApplication.payments.entity.Payment;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -22,6 +23,7 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -46,5 +48,5 @@ public class Order {
     @OneToOne(mappedBy = "order")
     private Payment payment;
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-    private List<OrderItem> orderItems;
+    private List<OrderItems> orderItems;
 }

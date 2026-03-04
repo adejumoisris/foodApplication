@@ -1,6 +1,7 @@
 package com.example.foodApplication.carts.entity;
 
 
+import com.example.foodApplication.menu.entity.Menu;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;

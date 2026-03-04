@@ -2,6 +2,9 @@ package com.example.foodApplication.auth_users.entity;
 
 import com.example.foodApplication.carts.entity.Cart;
 import com.example.foodApplication.order.entity.Order;
+import com.example.foodApplication.payments.entity.Payment;
+import com.example.foodApplication.reviews.entity.Reviews;
+import com.example.foodApplication.role.entity.Role;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -55,7 +58,7 @@ public class Users {
     private List<Order> orders;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Review> reviews;
+    private List<Reviews> reviews;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Payment> payments;
