@@ -1,0 +1,52 @@
+package com.example.foodApplication.payments.entity;
+
+import com.example.foodApplication.auth_users.entity.Users;
+import com.example.foodApplication.enums.PaymentGateway;
+import com.example.foodApplication.enums.PaymentStatus;
+import com.example.foodApplication.order.entity.Order;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Data
+@Table(name = "payments")
+public class Payment {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @OneToOne
+    @JoinColumn(name = "order_id")
+    private Order order;
+
+    private BigDecimal amount;
+    @Enumerated(EnumType.STRING)
+    private PaymentStatus paymentStatus;
+
+    private String transactionId;
+    @Enumerated(EnumType.STRING)
+    private PaymentGateway paymentGateway;
+
+    private String failureReason;
+    private LocalDateTime paymentDate;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private Users users;
+}
