@@ -1,5 +1,6 @@
 package com.example.foodApplication.category.entity;
 
+import com.example.foodApplication.menu.entity.Menu;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -12,6 +13,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
