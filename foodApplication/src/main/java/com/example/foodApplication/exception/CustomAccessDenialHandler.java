@@ -27,6 +27,5 @@ public class CustomAccessDenialHandler implements AccessDeniedHandler {
         response.setContentType("application/json");
         response.setStatus(HttpStatus.FORBIDDEN.value());
         response.getWriter().write(objectMapper.writeValueAsString(errorResponse));
-
     }
 }
